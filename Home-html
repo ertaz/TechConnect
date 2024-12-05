@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekti1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header> 
+        <nav>
+            <div class="logo">
+                <img src="Logo1.png" alt="#">
+                <a>Tech Connect </a>
+            </div>
+
+            <div class="button">
+                <button type="button">Home</button>
+                <button type="button">About Us</button>
+                <button type="button">Jobs</button>
+                <button type="button">Contact Us</button>
+                <button type="button">Profile</button>
+            </div>
+            
+        </nav>
+    </header>
+
+           <!-- <div class="info">
+            <h1>AA</h1>
+            <p>abc</p>
+            <div class="a">
+                <button type="button">Get Started</button>
+            </div>
+       </div> -->
+
+    
+   
+
+</body>
+</html>
