@@ -26,16 +26,21 @@
         </nav>
     </header>
 
-           <!-- <div class="info">
-            <h1>AA</h1>
-            <p>abc</p>
-            <div class="a">
-                <button type="button">Get Started</button>
+    <main>
+
+    <div class="background">
+        <section class="main-selection">
+            <div class="content">
+                <div class="details">
+                    <h2 class="title">Looking for a job?</h2>
+                    <h3 class="subtitle">Let us help you find your way through the tech industry</h3>
+                    <p class="description">Welcome aldkjhvv aiuyhgtfd luyhgs kibd donfa ksnai</p>
+                        <button type="button">Get Started</button>
+                </div>
             </div>
-       </div> -->
-
-    
-   
-
+        </section>
+    </div>
+    </main>
 </body>
 </html>
+
