@@ -1,91 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp form</title>
-    <link rel="stylesheet" href="SignUp-form.css">
-</head>
-<body>
+*{
+    font-family: 'Roboto', sans-serif;
+}
 
-    <div class="signup-container">
-        <div class="signup-box">
-            <div class="signup-text">
-                <h2>Sign Up</h2>
-            </div>
-            <input type="text" id="emri" placeholder="First Name" required>
-            <input type="text" id="mbiemri" placeholder="Last Name" required>
-            <input type="text" id="email"placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required> 
-            <input type="password" id="c-password"placeholder="Confirm Password" required>
+.signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
 
-            <br><br>
+.signup-box{
+    background-color: white;
+    padding: 40px 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    width: 350px;
+    border: 2px solid slateblue;
+    text-align: center;
+    border-radius: 30px;
+}
 
-            <button id="submit-btn">Sign Up</button>
+.signup-box input[type="text"],
+.signup-box input[type="text"],
+.signup-box input[type="text"],
+.signup-box input[type="password"],
+.signup-box input[type="password"]{
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 15px;
+    background-color:white;
+    font-size: 14px;
+    border: 2px solid #4C6A92;
+}
 
-        </div>
-    </div>
+.signup-text{
+    color: #4C6A92;;
+}
+.signup-box button{
+    background-color: blue;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 95%;
+    cursor: pointer;
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const BtnSubmit=document.getElementById('submit-btn');
-            BtnSubmit.addEventListener('click', validate);
-
-            function validate(ngjarja){
-                ngjarja.preventDefault();
-                const emri=document.getElementById('emri');
-                const mbiemri=document.getElementById('mbiemri');
-                const email=document.getElementById('email');
-                const password=document.getElementById('password');
-                const confirmpassword=document.getElementById('c-password');
-
-                if(emri.value==""){
-                    alert("Ju lutem shtypeni emrin."); emri.focus();
-                    return false;
-                }
-                if(mbiemri.value==""){
-                    alert("Ju lutem shtypeni mbiemrin."); mbiemri.focus();
-                    return false;
-                }
-                if(email.value==""){
-                    alert("Ju lutem shtypeni email-in."); email.focus();
-                    return false;
-                }
-                if(password.value==""){
-                    alert("Ju lutem shtypeni password-in."); password.focus();
-                    return false;
-                }
-                if(confirmpassword.value==""){
-                    alert("Ju lutem confirmoni password-in."); confirmpassword.focus();
-                    return false;
-                }
-                if(!emailValid(email.value)){
-                    alert("Ju lutem shtypni një email valid.");
-                    email.focus();
-                    return false;
-                }
-                if (password.value.length < 8) {
-                    alert("Passwordi duhet të ketë të paktën 8 karaktere.");
-                    password.focus();
-                    return false;
-                }
-
-                if(password.value !== confirmpassword.value){
-                    alert("Passwordat nuk janë të njejtë.");
-                    confirmpassword.focus();
-                    return false;
-                }
-            }
-
-                const emailValid=(email) =>{
-                    const emailRegex = /^([A-Za-z0-9\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
-                    return emailRegex.test(email.toLowerCase());
-
-                }
-
-        
-        });
-    </script>
-    
-</body>
-</html>
+}
+.signup-box button:hover {
+    background-color: #4C6A92; 
+}
