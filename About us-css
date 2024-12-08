@@ -207,3 +207,54 @@ body{
 .card .name:hover{
     color: var(--primary-color);
 }
+
+/* footer */
+
+footer {
+    margin-top: 0;
+    background-color: #263240;
+    color: #ffff;
+    padding: 20px 0;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+  
+  .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .footer p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .links {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .links li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .links a {
+    color: #ffff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  
+  
+  
