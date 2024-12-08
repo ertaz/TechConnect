@@ -9,7 +9,7 @@
     transition: 2s linear;
 }
 nav {
-    background-color: #274468;
+    background-color: #102541e0;
     position: fixed;
     top: 0; left: 0; right: 0;
     padding: 1.5rem 5%;
@@ -67,7 +67,7 @@ body{
     height:4px;
     display: block;
     margin: 0 auto;
-    background-color:blue;
+    background-color:#2d4058;
 }
 .heading p{
     font-size: 18px;
@@ -212,7 +212,7 @@ body{
 
 footer {
     margin-top: 0;
-    background-color: #263240;
+    background-color: #102541e0;
     color: #ffff;
     padding: 20px 0;
     text-align: center;
