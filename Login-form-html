@@ -16,10 +16,10 @@
                 <h2>Login</h2>
             </div>
             <div class="input-box">
-            <input type="text" placeholder="Username" required>
+            <input type="text" id="userid" placeholder="Username" required>
             </div>
             <div class="input-box">
-            <input type="password" placeholder="Password" required>
+            <input type="password" id="passwordid" placeholder="Password" required>
             </div>
 
             <div class="remember-me">
@@ -27,7 +27,7 @@
             </div>
             <br>
 
-            <button>Log In</button>
+            <button id="submit-btn">Log In</button>
 
 
             <div class="signup-link">
@@ -35,6 +35,27 @@
             </div>
         </div>
     </div>
-    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const BtnSubmit=document.getElementById('submit-btn');
+            BtnSubmit.addEventListener('click', validate);
+
+            function validate(ngjarja) {
+                ngjarja.preventDefault();
+
+                const user=document.getElementById('userid');
+                const password=document.getElementById('passwordid');
+                if(user.value == ""){
+                    alert("Ju lutem shtypni një username!"); user.focus();
+                    return false;
+                }
+                if(password.value == ""){
+                    alert("Ju lutem shtypni një password!"); password.focus();
+                    return false;
+                }
+            }
+        });
+    </script>    
 </body>
 </html>
