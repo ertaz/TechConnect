@@ -16,10 +16,10 @@
             </div>
 
             <div class="button">
-                <button type="button">Home</button>
-                <button type="button">About Us</button>
+                <a href="Home.html"><button type="button">Home</button></a>
+                <a href="About us.html"><button type="button">About Us</button></a>
                 <button type="button">Jobs</button>
-                <button type="button">Contact Us</button>
+                <a href="ContactUs.html"><button type="button">Contact Us</button></a>
                 <button type="button">Profile</button>
             </div>
             
@@ -34,8 +34,8 @@
                 <div class="details">
                     <h2 class="title">Looking for a job?</h2>
                     <h3 class="subtitle">Let us help you find your way through the tech industry</h3>
-                    <p class="description">Welcome aldkjhvv aiuyhgtfd luyhgs kibd donfa ksnai</p>
-                        <button type="button">Get Started</button>
+                    <p class="description">Welcome </p>
+                       <a href="LogIn-form.html"><button type="button">Get Started</button></a> 
                 </div>
             </div>
         </section>
