@@ -13,18 +13,79 @@
             <div class="signup-text">
                 <h2>Sign Up</h2>
             </div>
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
-            <input type="text" placeholder="Email" required>
-            <input type="password" placeholder="Password" required> 
-            <input type="password" placeholder="Confirm Password" required>
+            <input type="text" id="emri" placeholder="First Name" required>
+            <input type="text" id="mbiemri" placeholder="Last Name" required>
+            <input type="text" id="email"placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required> 
+            <input type="password" id="c-password"placeholder="Confirm Password" required>
 
             <br><br>
 
-            <button>Sign Up</button>
+            <button id="submit-btn">Sign Up</button>
 
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const BtnSubmit=document.getElementById('submit-btn');
+            BtnSubmit.addEventListener('click', validate);
+
+            function validate(ngjarja){
+                ngjarja.preventDefault();
+                const emri=document.getElementById('emri');
+                const mbiemri=document.getElementById('mbiemri');
+                const email=document.getElementById('email');
+                const password=document.getElementById('password');
+                const confirmpassword=document.getElementById('c-password');
+
+                if(emri.value==""){
+                    alert("Ju lutem shtypeni emrin."); emri.focus();
+                    return false;
+                }
+                if(mbiemri.value==""){
+                    alert("Ju lutem shtypeni mbiemrin."); mbiemri.focus();
+                    return false;
+                }
+                if(email.value==""){
+                    alert("Ju lutem shtypeni email-in."); email.focus();
+                    return false;
+                }
+                if(password.value==""){
+                    alert("Ju lutem shtypeni password-in."); password.focus();
+                    return false;
+                }
+                if(confirmpassword.value==""){
+                    alert("Ju lutem confirmoni password-in."); confirmpassword.focus();
+                    return false;
+                }
+                if(!emailValid(email.value)){
+                    alert("Ju lutem shtypni një email valid.");
+                    email.focus();
+                    return false;
+                }
+                if (password.value.length < 8) {
+                    alert("Passwordi duhet të ketë të paktën 8 karaktere.");
+                    password.focus();
+                    return false;
+                }
+
+                if(password.value !== confirmpassword.value){
+                    alert("Passwordat nuk janë të njejtë.");
+                    confirmpassword.focus();
+                    return false;
+                }
+            }
+
+                const emailValid=(email) =>{
+                    const emailRegex = /^([A-Za-z0-9\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+                    return emailRegex.test(email.toLowerCase());
+
+                }
+
+        
+        });
+    </script>
     
 </body>
 </html>
