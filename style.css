@@ -1,5 +1,6 @@
 
 * {
+  font-family: 'Roboto', sans-serif;
   margin: 0; padding: 0;
   box-sizing: border-box;
   outline: none; border: none;
@@ -184,7 +185,7 @@ button:hover {
 
 footer {
   margin-top: 700px; 
-  background-color: #263240;
+  background-color: #102541e0;
   color: #ffff;
   padding: 20px 0;
   text-align: center;
