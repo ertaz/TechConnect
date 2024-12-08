@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekti1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Home.css">
 </head>
 <body>
 
     <header> 
         <nav>
             <div class="logo">
-                <img src="Logo1.png" alt="#">
-                <a>Tech Connect </a>
+                <img src="logo3.png" alt="#">
+                <a> Tech Connect </a>
             </div>
 
             <div class="button">
@@ -39,8 +39,37 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div> 
+    
+    <section class="more-content">
+        <div class="more-box box1">
+            <h2>Start Your Career Journey Today!</h2>
+            <img class="imgg" src="img11.jpg" alt="">
+            <p>Explore our wide range of opportunities in the tech industry. Whether you are just starting out or looking for your next big role, we are here to help!</p>
+            <button type="button">Learn More</button>
+        </div>
+        <div class="more-box box2">
+            <h2>Join Our Tech Community</h2>
+            <img class="imgg" src="img22.webp" alt="">
+            <p>Be part of a growing network of tech professionals. Connect, collaborate, and thrive together in the world of technology.</p>
+            <button type="button">Join Us</button>
+        </div>
+    </section>
+
     </main>
+
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Tech Connect | All Rights Reserved</p>
+            <p>We are here to help you find the best opportunities in the tech industry.</p>
+            <ul class="links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
 </body>
 </html>
-
