@@ -83,3 +83,18 @@
              </div>
         </div>
     </div>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Tech Connect | All Rights Reserved</p>
+            <p>We are here to help you find the best opportunities in the tech industry.</p>
+            <ul class="links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
