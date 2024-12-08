@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="About us-css.css">
+</head>
+<body>
+    
+    <header> 
+        <nav>
+            <div class="logo">
+                <img src="Logo1.png" alt="#">
+                <a>Tech Connect </a>
+            </div>
+
+            <div class="button">
+                <button type="button">Home</button>
+                <button type="button">About Us</button>
+                <button type="button">Jobs</button>
+                <button type="button">Contact Us</button>
+                <button type="button">Profile</button>
+            </div>
+            
+        </nav>
+    </header>
+
+    <div class="heading">
+        <h1>About us</h1>
+        <p>Welcome to<strong>TechConnect</strong>, the premier platform designed to connect computer science graduates with ever-evolving tech indusrty.Our mission is to empower the next generation of tech professionals by providing a space where talent meets opportunity.</p>
+
+    </div>
+
+    <div class="container">
+        <section class="about">
+            <div class="about-image">
+                <img src="Computer-Science-Professionals-Working-Park-University.jpg">
+            </div>
+            <div class="about-content">
+                <p>TechConnect is a dynamic, cutting-edge job application website that caters to computer science graduates looking to advance their careers.
+                 Whether you're an aspiring software developer, data scientist, AI engineer, or any other tech professional, TechConnect provides the tools
+                 and resources to help you succeed in the competitive tech industry.
+                 Founded by industry experts with a deep understanding of both the challenges and opportunities in tech recruitment, we created TechConnect 
+                 to bridge the gap between talented graduates and the innovative companies that need their skills.</p>
+            </div>
+
+        </section>
+    </div>
+
+    <div class="section_container">
+        <div class="header-1">
+            <p>TESTIMONIALS</p>
+
+            <h1>What our clients say about us.</h1>
+        </div>
+        <div class="testimonials_grid">
+             <div class="card">
+                <p>"TechConnect was crucial in landing my first job as a front-end developer.
+                    The platform connected me with recruiters looking for web developers, and within just a few months,
+                    I secured a full-time role working on responsive web applications. TechConnect really opened the doors for my career in web development!" </p>
+                <hr>
+                <img src="profile-photo-1.avif" alt="user">
+                <p class="name">Olivia Bennett - Front-End Developer</p>
+             </div>
+             <div class="card">
+                <p>"Thanks to TechConnect, I am now a software engineer at Alpha Solutions, a fast-growing tech startup.
+                 Before discovering TechConnect, I found it challenging to land job interviews, despite having strong academic knowledge.
+                 The job search was much smoother with their guidance, and within a few months, I landed a role where I am now working on
+                  innovative software solutions."</p>
+                <hr>
+                <img src="photo-alan.avif" alt="user">
+                <p class="name">Alan Johnson - Software Enginner</p>
+             </div>
+             <div class="card">
+                <p>"TechConnect was a game-changer for me in securing my first role as a data analyst at Data Insights Corp, 
+                a leader in analytics.They guided me through the application process, and thanks to their support, I was able
+                to apply directly to Data Insights Corp — a major player in the industry. The personalized coaching, mock interviews, 
+                and access to industry connections gave me the confidence to succeed."</p>
+                <hr>
+                <img src="profile pic-3-1.avif" alt="user">
+                <p class="name">Ethan Carter - Data Analyst</p>
+             </div>
+        </div>
+    </div>
