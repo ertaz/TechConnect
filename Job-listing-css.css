@@ -1,0 +1,265 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 2s linear;
+}
+nav {
+    background-color: #2e3d50c4;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 1.5rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffff;
+}
+
+.button button {
+    background-color: #19273e;
+    color: #ffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 15px;
+}
+
+.button button:hover {
+    background-color: #ffffff84;
+    color: #383fa1;
+}
+
+.main{
+    width: calc(100% - 20% - 25%);
+    min-height: 100%;
+    min-width: 300px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2%;
+    margin-left: 20%;
+    background-color: var(--softPurple);
+    z-index: inherit;
+    margin-top: 5rem;
+}
+
+.main-header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-bar{
+    background-color: var(--whiteColor);
+    padding: 0.5rem;
+    border-radius: 20px;
+    display: none;
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background-color: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    position: relative;
+    background-color: var(--whiteColor);
+
+}
+
+.search input{
+    width: 100%;
+    border: 2px solid black;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+
+.filter-wrapper{
+    margin: 1rem 0;
+    font-size: 14px;
+}
+
+.filter{
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+}
+
+.btn-filter{
+    min-width: 110px;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: none;
+    background-color:aliceblue;
+    cursor: pointer;
+}
+
+.btn-filter:hover{
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    box-shadow: rgba(0, 0, 0, 0.24)0px 3px 8px;
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+    overflow-y: auto;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 3%;
+    margin: 0 1%;
+    background-color: white;
+    line-height: 1.5;
+    gap: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-left{
+    width: 10%;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20%;
+}
+
+.card-left img{
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+    padding: 1rem;
+}
+
+
+.card-center{
+    width: 50%;
+
+}
+
+.card-loc, .card-sub{
+    font-size: 13px;
+    color: var(--darkGreyColor);
+}
+
+.card-sub{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-sub p {
+    display: flex;
+    padding: 0 0.5rem 0 0 ;
+    align-items: center;
+}
+
+.card-right{
+    width: 15%;
+}
+
+.card-tag a{
+    color: var(--fontColor);
+    font-size: 13px;
+}
+
+.card-salary{
+    padding: 0.5rem 0;
+    color: blue;
+}
+
+.card-salary span{
+    color: var(--fontColor);
+    font-size: 13px;
+}
+
+.apply-now-btn {
+    background-color: #19273e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.apply-now-btn:hover {
+    background-color: #45a049;
+}
+
+/* footer */
+
+footer {
+    margin-top: 0;
+    background-color: #102541e0;
+    color: #ffff;
+    padding: 20px 0;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+  
+  .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .footer p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .links {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .links li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .links a {
+    color: #ffff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
