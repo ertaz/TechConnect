@@ -8,11 +8,12 @@
     text-decoration: none;
     transition: 2s linear;
 }
+
 nav {
     background-color: #102541e0;
     position: fixed;
     top: 0; left: 0; right: 0;
-    padding: 1.5rem 5%;
+    padding: 1rem 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,13 +26,19 @@ nav {
     color:#cbced3;
   }
   
+  .button {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
   .button button {
     background-color: #19273e;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    min-width: 120px;
     margin-left: 15px;
   }
   
@@ -39,10 +46,13 @@ nav {
     background-color: #ffffff84;
     color: #383fa1;
   }
+
+
 body{
     background-color:white;
-    padding-top: 100px;
+    padding-top: 120px;
 }
+
 .heading{
     width: 90%;
     display: flex;
@@ -74,6 +84,7 @@ body{
     color: #666;
     margin-bottom:35px;
 }
+
 .container{
     width: 90%;
     margin:0 auto;
@@ -93,12 +104,6 @@ body{
     overflow: hidden;
 }
 
-.about-image{
-    flex:1;
-    margin-right: 40px;
-    overflow: hidden;
-
-}
 .about-image img{
     max-width: 100%;
     height: auto;
@@ -106,26 +111,18 @@ body{
 }
 .about-content{
     flex:1;
-
 }
+
 .about-content h2{
     font-size: 23px;
     margin-bottom: 15px;
     color: #333;
-
 }
 .about-content p{
     font-size: 18px;
     line-height: 1.5;
     color:#666;
 }
-.about.reverse {
-    flex-direction: row-reverse;
-}
-
-
-
-/*  boxes */
 
 .section_container{
     width: 100%;
@@ -163,7 +160,6 @@ body{
     gap: 2rem;
     margin: 0 auto;
     padding: 0 15px;
-
 }
 
 .card{
@@ -208,8 +204,6 @@ body{
     color: var(--primary-color);
 }
 
-/* footer */
-
 footer {
     margin-top: 0;
     background-color: #102541e0;
@@ -220,41 +214,36 @@ footer {
     right: 0;
     bottom: 0;
     z-index: 1000;
-  }
+}
   
-  .footer {
+.footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-  }
+}
   
-  .footer p {
+.footer p {
     margin: 10px 0;
     font-size: 16px;
-  }
+}
   
-  .links {
+.links {
     list-style-type: none;
     padding: 0;
     margin-top: 10px;
-  }
+}
   
-  .links li {
+.links li {
     display: inline;
     margin: 0 15px;
-  }
+}
   
-  .links a {
+.links a {
     color: #ffff;
     text-decoration: none;
     font-size: 14px;
-  }
+}
   
-  .links a:hover {
+.links a:hover {
     text-decoration: underline;
-  }
-  
-  
-  
-  
-  
+}

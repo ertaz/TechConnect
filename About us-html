@@ -5,9 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
     <link rel="stylesheet" href="About us-css.css">
+    <style type="text/css">
+        #kontenti {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 50px auto; /* Add some spacing from the footer */
+            z-index: 0;
+        }
+        #kontenti img {
+            max-width: 400px;
+            height: 220px;
+        }
+        button {
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            font-size: 10pt;
+            color: blue;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    
+    <!--nav bar-->
     <header> 
         <nav>
             <div class="logo">
@@ -24,12 +49,12 @@
             </div>
             
         </nav>
-    </header>
+    </header> 
+
 
     <div class="heading">
         <h1>About us</h1>
         <p>Welcome to<strong>TechConnect</strong>, the premier platform designed to connect computer science graduates with ever-evolving tech indusrty.Our mission is to empower the next generation of tech professionals by providing a space where talent meets opportunity.</p>
-
     </div>
 
     <div class="container">
@@ -44,7 +69,6 @@
                  Founded by industry experts with a deep understanding of both the challenges and opportunities in tech recruitment, we created TechConnect 
                  to bridge the gap between talented graduates and the innovative companies that need their skills.</p>
             </div>
-
         </section>
     </div>
 
@@ -84,6 +108,14 @@
         </div>
     </div>
 
+    <div id="kontenti">
+        <header>
+        <h2>Recent Hirings</h2>
+        <img name="mySlide" id="slideshow" />
+        </header>
+        <button onclick="ndrroImg()">Next</button>
+    </div>  
+
     <!-- footer -->
     <footer>
         <div class="footer">
@@ -96,5 +128,27 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        var i = 0;
+        var imgArray = [
+            "photo-3.jpg",
+            "photo-2.avif",
+            "photo-1.png",
+            "photo-4.jpg",
+            "photo-5.webp"
+        ];
+        function ndrroImg() {
+            document.getElementById('slideshow').src = imgArray[i];
+            if (i < imgArray.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+        }
+
+        document.body.addEventListener('load', ndrroImg());
+    </script>
+
 </body>
 </html>
