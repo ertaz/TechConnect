@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp form</title>
+    <link rel="stylesheet" href="SignUp-form.css?v=1.0">
+</head>
+
+<body>
+
+    <div class="signup-container">
+        <div class="signup-box">
+            <div class="signup-text">
+                <h2>Sign Up</h2>
+            </div>
+                <input type="text" id="emri" name="first_name" placeholder="First Name" required>
+                <input type="text" id="mbiemri" name="last_name" placeholder="Last Name" required>
+                <input type="number" name="age" id="age" placeholder="Age" required>
+                <input type="text" name="location" id="location" placeholder="Location" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="c-password" name="confirm_password" placeholder="Confirm Password" required>
+            
+                <button type="submit" id="submit-btn">Sign Up</button>
+            </form>
+        </div>
+
+    <div class="optional-box">
+        <div class="optional-text">
+            <h2>Optional</h2>
+        </div>
+            <textarea name="about_me" id="about_me" rows="4" placeholder="About Me (Optional)"></textarea>
+            <input type="file" name="profile_picture" id="profile_picture">
+            <input type="url" name="facebook" id="facebook" placeholder="Facebook URL (Optional)">
+            <input type="url" name="instagram" id="instagram" placeholder="Instagram URL (Optional)">
+            <input type="url" name="linkedin" id="linkedin" placeholder="LinkedIn URL (Optional)">
+            <input type="url" name="other_social" id="other_social" placeholder="Other Social URL (Optional)">
+        </form>
+    </div>
+</div>
+
+    <script>
+
+            BtnSubmit.addEventListener('click', function(ngjarja) {
+                    ngjarja.preventDefault();
+                    if (validate()) {
+                        document.forms[0].submit();
+                    }
+
+            function validate(ngjarja){
+                ngjarja.preventDefault();
+                const emri=document.getElementById('emri');
+                const mbiemri=document.getElementById('mbiemri');
+                const email=document.getElementById('email');
+                const password=document.getElementById('password');
+                const confirmpassword=document.getElementById('c-password');
+
+                if(emri.value==""){
+                    alert("Ju lutem shtypeni emrin."); emri.focus();
+                    return false;
+                }
+                if(mbiemri.value==""){
+                    alert("Ju lutem shtypeni mbiemrin."); mbiemri.focus();
+                    return false;
+                }
+                if(email.value==""){
+                    alert("Ju lutem shtypeni email-in."); email.focus();
+                    return false;
+                }
+                if(password.value==""){
+                    alert("Ju lutem shtypeni password-in."); password.focus();
+                    return false;
+                }
+                if(confirmpassword.value==""){
+                    alert("Ju lutem confirmoni password-in."); confirmpassword.focus();
+                    return false;
+                }
+                if(!emailValid(email.value)){
+                    alert("Ju lutem shtypni një email valid.");
+                    email.focus();
+                    return false;
+                }
+                if (password.value.length < 8) {
+                    alert("Passwordi duhet të ketë të paktën 8 karaktere.");
+                    password.focus();
+                    return false;
+                }
+
+                if(password.value !== confirmpassword.value){
+                    alert("Passwordat nuk janë të njejtë.");
+                    confirmpassword.focus();
+                    return false;
+                }
+            }
+
+                const emailValid=(email) =>{
+                    const emailRegex = /^([A-Za-z0-9\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+                    return emailRegex.test(email.toLowerCase());
+
+                }
+
+        
+        });
+    </script>
+    
+</body>
+</html>
