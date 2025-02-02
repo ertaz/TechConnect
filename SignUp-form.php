@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 include_once 'Database.php';
 include_once 'User.php';
 
@@ -15,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = isset($_POST['username']) ? trim($_POST['username']) : null;
     $password = isset($_POST['password']) ? trim($_POST['password']) : null;
     $confirm_password = isset($_POST['confirm_password']) ? trim($_POST['confirm_password']) : null;
+    $role = 'user';
 
     if (empty($name) || empty($surname) || empty($email) || empty($username) || empty($password) || empty($confirm_password)) {
         echo "All fields are required!";
@@ -31,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
-    if ($user->register($name, $surname, $email, $username, $password, $age, $location)) {
+    if ($user->register($name, $surname, $email, $username, $password, $age, $location, $role)) {
         $user_id = $connection->lastInsertId();
 
         $about_me = isset($_POST['about_me']) ? trim($_POST['about_me']) : '';
@@ -112,6 +115,69 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const BtnSubmit = document.getElementById('submit-btn');
+        BtnSubmit.addEventListener('click', validate);
+
+        function validate(ngjarja) {
+            ngjarja.preventDefault();
+
+            const emri = document.getElementById('emri');
+            const mbiemri = document.getElementById('mbiemri');
+            const email = document.getElementById('email');
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+            const confirmpassword = document.getElementById('c-password');
+
+            if (emri.value == "") {
+                alert("Please enter your first name.");
+                emri.focus();
+                return false;
+            }
+            if (mbiemri.value == "") {
+                alert("Please enter your last name.");
+                mbiemri.focus();
+                return false;
+            }
+            if (email.value == "") {
+                alert("Please enter your email.");
+                email.focus();
+                return false;
+            }
+            if (username.value == "") {
+                alert("Please enter your username.");
+                username.focus();
+                return false;
+            }
+            if (password.value == "") {
+                alert("Please enter your password.");
+                password.focus();
+                return false;
+            }
+            if (confirmpassword.value == "") {
+                alert("Please confirm your password.");
+                confirmpassword.focus();
+                return false;
+            }
+
+            if (password.value.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                password.focus();
+                return false;
+            }
+
+            if (password.value !== confirmpassword.value) {
+                alert("Passwords do not match.");
+                confirmpassword.focus();
+                return false;
+            }
+
+            document.querySelector('form').submit(); // Submit the form if all validations pass
+        }
+    });
+</script>
 
 </body>
 </html>
