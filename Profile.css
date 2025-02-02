@@ -72,9 +72,9 @@ nav {
 
 .profile-pic img {
   border-radius: 20%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  object-fit: fill;
   transition: transform 0.3s ease-in-out;
   border: 2px dashed #ccc;  
 }
@@ -167,6 +167,10 @@ width: 300px;
 height: 200px;
 text-align: center;
 border-radius: 10px;
+}
+
+.modal-content h2 {
+margin-bottom: 30px;
 }
 
 button {
