@@ -1,24 +1,23 @@
 <?php
-// Database connection
-$servername = "localhost"; // replace with your server name
-$username = "root"; // your MySQL username
-$password = ""; // your MySQL password
-$dbname = "projekti"; // your database name
 
-// Create connection
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "projekti"; 
+
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch clients from the database
 $sql = "SELECT * FROM clients";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Store results in an array
+   
     $clients = [];
     while($row = $result->fetch_assoc()) {
         $clients[] = $row;
@@ -72,10 +71,16 @@ $conn->close();
             </div>
             <div class="button">
                 <a href="Home.php"><button type="button">Home</button></a>
-                <a href="About us.php"><button type="button">About Us</button></a>
-                <button type="button">Jobs</button>
+                <button type="button">About Us</button>
+                <a href="Job-listing.php"><button type="button">Jobs</button></a>
                 <a href="ContactUs.php"><button type="button">Contact Us</button></a>
-                <a href="profile.php"><button type="button">Profile</button></a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <!-- If user is logged in, show 'Profile' button -->
+                    <a href="profile.php"><button type="button">Profile</button></a>
+                <?php else: ?>
+                    <!-- If user is logged out, show 'Log In' button -->
+                    <a href="LogIn-form.php"><button type="button">Log In</button></a>
+                <?php endif; ?>
             </div>
         </nav>
     </header> 
