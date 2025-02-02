@@ -2,6 +2,14 @@
 
 session_start();
 
+// Check if the user is logged in, otherwise redirect to login page
+if (!isset($_SESSION['user_id'])) {
+    header("Location: LogIn-form.php");
+    exit;
+}
+
+
+
 require_once 'Database.php';
 
 $db = new Database();
@@ -45,10 +53,10 @@ $jobLists = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="button">
                 <a href="Home.php"><button type="button">Home</button></a>
-                <a href="About us.html"><button type="button">About Us</button></a>
+                <a href="About_us.php"><button type="button">About Us</button></a>
                 <a href="Job-listing.php"><button type="button">Jobs</button></a>
                 <a href="ContactUs.php"><button type="button">Contact Us</button></a>
-                <button type="button">Profile</button>
+                <a href="profile.php"><button type="button">Profile</button></a>
             </div>
         </nav>
     </header>
