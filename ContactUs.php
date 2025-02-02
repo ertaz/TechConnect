@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +21,10 @@
             </div>
 
             <div class="button">
-                <a href="Home.html"><button type="button">Home</button></a>
+                <a href="Home.php"><button type="button">Home</button></a>
                 <a href="About us.html"><button type="button">About Us</button></a>
-                <button type="button">Jobs</button>
-                <a href="ContactUs.html"><button type="button">Contact Us</button></a>
+                <a href="Job-listing.php"><button type="button">Jobs</button></a>
+                <a href="ContactUs.php"><button type="button">Contact Us</button></a>
                 <button type="button">Profile</button>
             </div>
             
@@ -50,7 +55,7 @@
                 <div class="message-form">
                     <h2>Send Us a Message</h2>
                     <form action="#" method="POST">
-                        <label for="name">full name</label>
+                        <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                         
                         <label for="email">email</label>
@@ -59,7 +64,7 @@
                         <label for="message">your message</label>
                         <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                         
-                        <button type="submit">Send Message</button>
+                        <button type="submit" name="submit">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -79,5 +84,25 @@
                 </ul>
             </div>
         </footer>
+
+        <?php
+        include_once 'userRepository.php';
+
+     // Check if form is submitted
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+    $name = isset($_POST['name']) ? $_POST['name'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $message = isset($_POST['message']) ? $_POST['message'] : null;
+
+    if ($name && $email && $message) {
+        $userR = new UserRepository();
+        $userR->messageFromContactUs($name, $email, $message);
+        echo "<script>alert('Your message has been sent successfully!');</script>";
+    } else {
+        echo "<script>alert('Please fill in all fields before submitting.');</script>";
+    }
+}
+?>
 
 </html>
