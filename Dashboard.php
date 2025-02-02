@@ -1,27 +1,12 @@
-<?php 
-session_start();
-
-if (!isset($_SESSION['email'])) {
-    header("Location: LogIn-form.php");
-} else {
-    if ($_SESSION['role'] == "user") {
-        header("Location: Home.php");
-    } else {
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="Dashboard-css.css?v=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Dashboard-css.css">
 </head>
-
-
 <body>
-
 <header> 
         <nav>
             <div class="logo">
@@ -30,9 +15,9 @@ if (!isset($_SESSION['email'])) {
             </div>
 
             <div class="button">
-                <a href="Home.php"><button type="button">Home</button></a>
+                <a href="Home.html"><button type="button">Home</button></a>
                 <a href="About us.html"><button type="button">About Us</button></a>
-                <a href="Job-listing.html"><button type="button">Jobs</button></a>
+                <button type="button">Jobs</button>
                 <a href="ContactUs.html"><button type="button">Contact Us</button></a>
                 <button type="button">Profile</button>
             </div>
@@ -47,7 +32,6 @@ if (!isset($_SESSION['email'])) {
             <th>EMAIL</th>
             <th>USERNAME</th>
             <th>PASSWORD</th>
-            <th>ROLE</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -61,15 +45,14 @@ if (!isset($_SESSION['email'])) {
             echo 
             "
             <tr>
-                <td>$user[id]</td> 
-                <td>$user[name]</td> 
-                <td>$user[surname]</td> 
-                <td>$user[email]</td> 
-                <td>$user[username]</td> 
-                <td>$user[password]</td> 
-                <td>{$user['role']}</td>
-                <td><a href='Edit.php?id=$user[id]'>Edit</a></td> 
-                <td><a href='Delete.php?id=$user[id]'>Delete</a></td> 
+                <td>$user[Id]</td> 
+                <td>$user[Name]</td> 
+                <td>$user[Surname]</td> 
+                <td>$user[Email]</td> 
+                <td>$user[Username]</td> 
+                <td>$user[Password]</td> 
+                <td><a href='edit.php?id=$user[Id]'>Edit</a></td> 
+                <td><a href='delete.php?id=$user[Id]'>Delete</a></td> 
             </tr>
             ";
         }
@@ -77,8 +60,6 @@ if (!isset($_SESSION['email'])) {
         </table>
 
         <!-- footer -->
-</body>
-
 <footer>
     <div class="footer">
         <p>&copy; 2024 Tech Connect | All Rights Reserved</p>
@@ -90,9 +71,5 @@ if (!isset($_SESSION['email'])) {
         </ul>
     </div>
 </footer>
+</body>
 </html>
-<?php
-    }
-}
-
-?>
