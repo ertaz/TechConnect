@@ -1,134 +1,120 @@
-*{
-  align-content: center;
+body{
+  padding: 100px;
 }
-.body{
-    padding: 0;
-    margin: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 nav {
-    background-color: #2e3d50c4;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    padding: 1.5rem 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  background-color: #2e3d50c4;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 1.5rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
 .logo {
-    font-size: 35px;
-    font-weight: bold;
-    color: #ffff;
+  font-size: 35px;
+  font-weight: bold;
+  color: #ffff;
 }
 
 .button button {
-    background-color: #19273e;
-    color: #ffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 15px;
+  background-color: #19273e;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 15px;
 }
 
 .button button:hover {
-    background-color: #ffffff84;
-    color: #383fa1;
+  background-color: #ffffff84;
+  color: #383fa1;
 }
 
 table {
-
-    max-width: 100%;
-    border-collapse: collapse;
-    margin-top: 200px;
-    margin-left: 10px;
-    margin-right: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
 }
 
 th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
 }
 
 th {
-    background-color: blue;
-    color: white;
+  background-color: blue;
+  color: white;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 tr:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 
 /* Style for buttons in the table */
 td a {
-    padding: 6px 12px;
-    margin: 5px;
-    border: 1px solid #4CAF50;
-    border-radius: 4px;
-    background-color: white;
-    transition: background-color 0.3s ease;
+  padding: 6px 12px;
+  margin: 5px;
+  border: 1px solid #4CAF50;
+  border-radius: 4px;
+  background-color: white;
+  transition: background-color 0.3s ease;
 }
 
 td a:hover {
-    background-color: blue;
-    color: white;
+  background-color: blue;
+  color: white;
 }
 
 /* footer */
 
 footer {
-    margin-top: 300px;
-    background-color: #102541e0;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
+  background-color: #102541e0;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
-  
-  .footer {
-    /* margin: 0 auto; */
-    padding: 0 15px;
-  }
-  
-  .footer p {
-    margin: 10px 0;
-    font-size: 16px;
-  }
-  
-  .links {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-  }
-  
-  .links li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  .links a {
-    color: #ffff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .links a:hover {
-    text-decoration: underline;
-  }
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.links {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.links li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.links a {
+  color: #ffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
