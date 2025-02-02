@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once 'Database.php';
 
 $db = new Database();
@@ -17,7 +20,6 @@ if ($searchTerm) {
 $stmt = $conn->prepare($query);
 
 if ($searchTerm) {
-    // Bind the search term to the prepared statement
     $stmt->bindValue(':searchTerm', '%' . $searchTerm . '%');
 }
 
