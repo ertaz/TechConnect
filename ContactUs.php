@@ -22,10 +22,16 @@ session_start();
 
             <div class="button">
                 <a href="Home.php"><button type="button">Home</button></a>
-                <a href="About us.html"><button type="button">About Us</button></a>
+                <a href="About_us.php"><button type="button">About Us</button></a>
                 <a href="Job-listing.php"><button type="button">Jobs</button></a>
                 <a href="ContactUs.php"><button type="button">Contact Us</button></a>
-                <button type="button">Profile</button>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <!-- If user is logged in, show 'Profile' button -->
+                    <a href="profile.php"><button type="button">Profile</button></a>
+                <?php else: ?>
+                    <!-- If user is logged out, show 'Log In' button -->
+                    <a href="LogIn-form.php"><button type="button">Log In</button></a>
+                <?php endif; ?>
             </div>
             
         </nav>
@@ -88,7 +94,6 @@ session_start();
         <?php
         include_once 'userRepository.php';
 
-     // Check if form is submitted
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $name = isset($_POST['name']) ? $_POST['name'] : null;
