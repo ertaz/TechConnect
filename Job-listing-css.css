@@ -69,7 +69,7 @@ nav {
 }
 
 .search{
-    width: 100%;
+    width: 1000px;
     display: flex;
     justify-content: space-between;
     border: none;
@@ -83,9 +83,10 @@ nav {
 
 .search input{
     width: 100%;
+    padding: 1.5em;
     border: 2px solid black;
     padding: 0.5rem;
-    border-radius: 20px;
+    border-radius: 100px;
 }
 
 
@@ -220,7 +221,7 @@ nav {
 /* footer */
 
 footer {
-    margin-top: 0;
+    margin-top: auto;
     background-color: #102541e0;
     color: #ffff;
     padding: 20px 0;
