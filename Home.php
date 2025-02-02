@@ -2,15 +2,18 @@
 session_start();
 
 // Ensure that the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header("Location: LogIn-form.php");
-    exit;
-}
+// if (!isset($_SESSION['user_id'])) {
+//      header("Location: LogIn-form.php");
+//     exit;
+// }
 
-// Check the user role and control the visibility of the dashboard button
-$showDashboardButton = ($_SESSION['role'] === 'admin');  // Only show if user is admin
+$isLoggedIn = isset($_SESSION['user_id']);
+$showDashboardButton = ($isLoggedIn && isset($_SESSION['role']) && $_SESSION['role'] === 'admin');  // Show Dashboard only for admin
+
+// Check if the 'role' key exists in the session before using it
+// $showDashboardButton = (isset($_SESSION['role']) && $_SESSION['role'] === 'admin');  
+// Only show if user is admin
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,15 +34,20 @@ $showDashboardButton = ($_SESSION['role'] === 'admin');  // Only show if user is
 
             <div class="button">
                 <a href="Home.php"><button type="button">Home</button></a>
-                <a href="About us.html"><button type="button">About Us</button></a>
+                <a href="About_us.php"><button type="button">About Us</button></a>
                 <a href="Job-listing.php"><button type="button">Jobs</button></a>
-                <a href="ContactUs.html"><button type="button">Contact Us</button></a>
-                <button type="button">Profile</button>
+                <a href="ContactUs.php"><button type="button">Contact Us</button></a>
                 <!-- Only show the Dashboard button if the user is an admin -->
                 <?php if ($showDashboardButton): ?>
                     <a href="Dashboard.php"><button type="button">Dashboard</button></a>
                 <?php endif; ?>
-                <a href="Logout.php"><button type="button">Sign Out</button></a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <!-- If user is logged in, show 'Profile' button -->
+                    <a href="profile.php"><button type="button">Profile</button></a>
+                <?php else: ?>
+                    <!-- If user is logged out, show 'Log In' button -->
+                    <a href="LogIn-form.php"><button type="button">Log In</button></a>
+                <?php endif; ?>
             </div>
             
         </nav>
@@ -64,7 +72,7 @@ $showDashboardButton = ($_SESSION['role'] === 'admin');  // Only show if user is
                     <h2>Start Your Career Journey Today!</h2>
                     <img class="imgg" src="img11.jpg" alt="">
                     <p>Explore our wide range of opportunities in the tech industry. Whether you are just starting out or looking for your next big role, we are here to help!</p>
-                    <button type="button">Learn More</button>
+                    <a href="About_us.php"><button type="button">Learn More</button></a>
                 </div>
             </div>
             <div class="more-box box2">
@@ -72,7 +80,7 @@ $showDashboardButton = ($_SESSION['role'] === 'admin');  // Only show if user is
                     <h2>Join Our Tech Community</h2>
                     <img class="imgg" src="img22.webp" alt="">
                     <p>Be part of a growing network of tech professionals. Connect, collaborate, and thrive together in the world of technology.</p>
-                    <button type="button">Join Us</button>
+                    <a href="Job-listing.php"><button type="button">Join Us</button></a>
                 </div>
             </div>
         </section>
