@@ -13,16 +13,8 @@ if(isset($_POST['editBtn'])){
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $username = $_POST['username'];
-    $role = $_POST['role'];
-
     $password = $_POST['password'];
-    if (!empty($password)) {
-        // Hash the new password
-        $password = password_hash($password, PASSWORD_DEFAULT);
-    } else {
-        // If no new password is provided, use the existing password
-        $password = $user['password'];
-    }
+    $role = $_POST['role'];
 
     $userRepository->updateUser($id, $name, $surname, $email, $username, $password, $role);
 
