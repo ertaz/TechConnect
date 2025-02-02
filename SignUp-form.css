@@ -6,40 +6,26 @@
 }
 
 body {
-    background-color: #f7f7f7;
+    background: linear-gradient(90deg, rgba(70, 130, 180, 1) 0%, rgba(135, 206, 235, 1) 55%);
 }
 
 .signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
 }
 
-.signup-box,
-.optional-box {
+.signup-box {
     background-color: white;
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 48%; 
+    width: 42%;
     border-radius: 15px;
     border: 2px solid #4C6A92;
     margin: 0 10px;
-    height: 600px;
-}
-
-.signup-box {
-    text-align: center;
-}
-
-.optional-box {
-    text-align: center;
-}
-
-.signup-text h2, .optional-text h2 {
-    color: #4C6A92;
-    margin-bottom: 20px;
+    height: auto;
 }
 
 .signup-box input,
@@ -53,9 +39,24 @@ body {
     font-size: 14px;
 }
 
+.optional-box {
+    margin-top: 30px; 
+    margin-bottom: 20px;
+}
+
+.optional-box input[type="file"] {
+    padding: 0;
+}
+
 .optional-box textarea {
     resize: vertical;
     height: 120px;
+}
+
+.signup-text h2,
+.optional-text h2 {
+    color: #4C6A92;
+    margin-bottom: 20px;
 }
 
 .signup-box button {
@@ -74,61 +75,6 @@ body {
     background-color: #3b5671;
 }
 
-.signup-box input[type="file"],
-.optional-box input[type="file"] {
-    padding: 0;
+.profile_picture{
+    background-color: #3b5671;
 }
-
-
-/* *{
-    font-family: 'Roboto', sans-serif;
-}
-
-.signup-container{
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-}
-
-.signup-box{
-    background-color: white;
-    padding: 40px 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    width: 350px;
-    border: 2px solid slateblue;
-    text-align: center;
-    border-radius: 30px;
-}
-
-.signup-box input[type="text"],
-.signup-box input[type="text"],
-.signup-box input[type="text"],
-.signup-box input[type="password"],
-.signup-box input[type="password"]{
-    width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 15px;
-    background-color:white;
-    font-size: 14px;
-    border: 2px solid #4C6A92;
-}
-
-.signup-text{
-    color: #4C6A92;;
-}
-.signup-box button{
-    background-color: blue;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    width: 95%;
-    cursor: pointer;
-
-}
-.signup-box button:hover {
-    background-color: #4C6A92; 
-} */
