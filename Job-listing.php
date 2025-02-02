@@ -1,11 +1,26 @@
-<?php 
+<?php
 require_once 'Database.php';
 
 $db = new Database();
 $conn = $db->getConnection();
 
+// Get the search term from the GET request
+$searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
+
+// Prepare the query to fetch job listings (add WHERE clause for search)
 $query = "SELECT company_name, job_title, location, time_posted, job_type, applicants, division, salary, company_logo_path FROM job_listings";
+
+if ($searchTerm) {
+    $query .= " WHERE job_title LIKE :searchTerm OR company_name LIKE :searchTerm";
+}
+
 $stmt = $conn->prepare($query);
+
+if ($searchTerm) {
+    // Bind the search term to the prepared statement
+    $stmt->bindValue(':searchTerm', '%' . $searchTerm . '%');
+}
+
 $stmt->execute();
 $jobLists = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -16,7 +31,7 @@ $jobLists = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Listings</title>
-    <link rel="stylesheet" href="Job-listing-css.css">
+    <link rel="stylesheet" href="Job-listing-css.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <header> 
@@ -30,7 +45,7 @@ $jobLists = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <a href="Home.php"><button type="button">Home</button></a>
                 <a href="About us.html"><button type="button">About Us</button></a>
                 <a href="Job-listing.php"><button type="button">Jobs</button></a>
-                <a href="ContactUs.html"><button type="button">Contact Us</button></a>
+                <a href="ContactUs.php"><button type="button">Contact Us</button></a>
                 <button type="button">Profile</button>
             </div>
         </nav>
@@ -40,7 +55,9 @@ $jobLists = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="main-header">
             <ion-icon class="menu-bar" name="menu-outline"></ion-icon>
             <div class="search">
-                <input type="text" id="searchInput" placeholder="Search your best job here...">
+                <form method="get" action="Job-listing.php">
+                    <input type="text" name="search" placeholder="Search your best job here..." value="<?php echo htmlspecialchars($searchTerm); ?>">
+                </form>
             </div>
         </div>
 
